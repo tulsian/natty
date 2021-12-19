@@ -43,7 +43,7 @@ public class Parser {
 
   /**
    * Creates a new parser using the given time zone as the default
-   * @param defaultTimeZone
+   * @param defaultTimeZone the default time zone for this Parser
    */
   public Parser(TimeZone defaultTimeZone) {
     _defaultTimeZone = defaultTimeZone;
@@ -60,8 +60,8 @@ public class Parser {
    * Parses the given input value for one or more groups of
    * date alternatives
    * 
-   * @param value
-   * @return
+   * @param value the input to parse
+   * @return the list of parsed groups with date alternatives
    */
   public List<DateGroup> parse(String value) {
     return parse(value, new Date());
@@ -72,9 +72,9 @@ public class Parser {
    * date alternatives with relative dates resolved according
    * to referenceDate
    *
-   * @param value
-   * @param referenceDate
-   * @return
+   * @param value the input value to parse
+   * @param referenceDate the date wrt to which the relative dates should be resolved
+   * @return the list of parsed groups with date alternatives
    */
   public List<DateGroup> parse(String value, Date referenceDate) {
 

@@ -63,8 +63,8 @@ public class WalkerState {
    * seeks to a specified day of the week in the past or future.
    * 
    * @param direction the direction to seek: two possibilities 
-   *    '<' go backward 
-   *    '>' go forward
+   *    '{@literal <}' go backward
+   *    '{@literal >}' go forward
    *    
    * @param seekType the type of seek to perform (by_day or by_week)
    *     by_day means we seek to the very next occurrence of the given day
@@ -142,8 +142,8 @@ public class WalkerState {
   }
   
   /**
-   * 
-   * @param year
+   * Seeks to the given year
+   * @param year the year to seek to, represented as an integer between 0 and 9999. Must be guaranteed to parse as an Integer.
    */
   public void seekToYear(String year) {
     int yearInt = Integer.parseInt(year);
@@ -158,8 +158,8 @@ public class WalkerState {
    * seeks to a particular month
    * 
    * @param direction the direction to seek: two possibilities 
-   *    '<' go backward 
-   *    '>' go forward
+   *    '{@literal <}' go backward
+   *    '{@literal >}' go forward
    *    
    * @param seekAmount the amount to seek.  Must be guaranteed to parse as an integer
    *     
@@ -197,12 +197,12 @@ public class WalkerState {
    * seeks by a span of time (weeks, months, etc)
    * 
    * @param direction the direction to seek: two possibilities 
-   *    '<' go backward 
-   *    '>' go forward
-   *    
-   * @param seekAmount the amount to seek.  Must be guaranteed to parse as an integer
-   *     
-   * @param span
+   *    '{@literal <}' go backward
+   *    '{@literal >}' go forward
+   *
+   * @param seekAmount the amount to seek. Must be guaranteed to parse as an integer.
+   *
+   * @param span the span of time the seekAmount represents
    */
   public void seekBySpan(String direction, String seekAmount, String span) {
     if(span.startsWith(SEEK_PREFIX)) span = span.substring(3);
@@ -237,8 +237,9 @@ public class WalkerState {
   
   /**
    * 
-   * @param index
-   * @param dayOfWeek
+   * @param index the week number in the month to set
+   *
+   * @param dayOfWeek the day within the week
    */
   public void setDayOfWeekIndex(String index, String dayOfWeek) {
     int indexInt = Integer.parseInt(index);
@@ -395,9 +396,9 @@ public class WalkerState {
 
   /**
    * Seeks to the given holiday within the given year
-   * 
-   * @param holidayString
-   * @param yearString
+   *
+   * @param holidayString the name of the holiday
+   * @param yearString the year, represented as int
    */
   public void seekToHolidayYear(String holidayString, String yearString) {
     Holiday holiday = Holiday.valueOf(holidayString);
@@ -410,8 +411,8 @@ public class WalkerState {
    * Seeks forward or backwards to a particular season based on the current date
    * 
    * @param seasonString The season to seek to
-   * @param direction     The direction to seek 
-   * @param seekAmount    The number of years to seek
+   * @param direction    The direction to seek
+   * @param seekAmount   The number of years to seek
    */
   public void seekToSeason(String seasonString, String direction, String seekAmount) {
     Season season = Season.valueOf(seasonString);
@@ -423,8 +424,8 @@ public class WalkerState {
   /**
    * Seeks to the given season within the given year
    * 
-   * @param seasonString
-   * @param yearString
+   * @param seasonString the season to seek to
+   * @param yearString the year, represented as int
    */
   public void seekToSeasonYear(String seasonString, String yearString) {
     Season season = Season.valueOf(seasonString);
@@ -434,14 +435,14 @@ public class WalkerState {
   }
 
   /**
-   * 
+   * Sets the date group as recurring
    */
   public void setRecurring() {
     _dateGroup.setRecurring(true);
   }
   
   /**
-   * 
+   * Captures the date time in the date group
    */
   public void captureDateTime() {
 
@@ -650,9 +651,6 @@ public class WalkerState {
     }
   }
   
-  /**
-   * 
-   */
   private void markTimeInvocation(String amPm) {
     _timeGivenInGroup = true;
     _dateGroup.setIsTimeInferred(false);
