@@ -3,7 +3,7 @@ package com.joestelmach.natty.grammar;
 import java.io.ByteArrayInputStream;
 import java.lang.reflect.Method;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;

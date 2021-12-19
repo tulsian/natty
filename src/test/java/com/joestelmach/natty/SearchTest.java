@@ -1,6 +1,6 @@
 package com.joestelmach.natty;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

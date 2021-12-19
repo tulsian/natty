@@ -3,5 +3,5 @@ expression, natty will apply standard language recognition and translation
 techniques to produce a list of corresponding dates with optional parse and
 syntax information.
 
-Complete documentation can be found here:
-http://natty.joestelmach.com
+This is a fork from https://github.com/joestelmach/natty to update the dependencies
+and include any bug fixes
