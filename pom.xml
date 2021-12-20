@@ -3,7 +3,7 @@
   <groupId>com.tulsian</groupId>
   <artifactId>natty</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.1-SNAPSHOT</version>
+  <version>0.2.0</version>
   <name>Natty Date Parser</name>
   <description>natural language date parser</description>
   <url>https://github.com/tulsian/natty</url>
@@ -19,7 +19,7 @@
     <connection>scm:git:git@github.com:tulsian/natty.git</connection>
     <url>scm:git:git@github.com:tulsian/natty.git</url>
     <developerConnection>scm:git:git@github.com:tulsian/natty.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v0.2.0</tag>
   </scm>
 
   <developers>
