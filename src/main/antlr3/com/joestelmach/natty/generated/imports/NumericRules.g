@@ -53,8 +53,8 @@ int_four_digits
       -> INT[$int_four_digits.text]
   ;
   
-// a number between one and thirty-one either spelled-out, or as an
-// integer with an optional 0 prefix for numbers betwen 1 and 9
+// a number either spelled-out, or as an integer with an optional
+// 0 prefix for numbers betwen 1 and 9
 spelled_or_int_01_to_31_optional_prefix
   : int_01_to_31_optional_prefix
   | spelled_one_to_thirty_one
@@ -65,7 +65,7 @@ spelled_or_int_01_to_31_optional_prefix
 spelled_or_int_optional_prefix
   : spelled_one_to_thirty_one // TODO expand this spelled range to at least ninety-nine
   | ((int_01_to_31_optional_prefix | int_32_to_59 | int_60_to_99)
-     ( INT_0 | INT_00 | int_01_to_31_optional_prefix | int_32_to_59 | int_60_to_99)?
+     ( INT_0 | INT_00 | int_01_to_31_optional_prefix | int_32_to_59 | int_60_to_99)*
      
        -> INT[$spelled_or_int_optional_prefix.text])
   ;
